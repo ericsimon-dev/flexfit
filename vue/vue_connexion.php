@@ -1,4 +1,3 @@
-<?php include_once "vue/head.php"; ?>
 <link rel="stylesheet" href="css/connexion.css"/>
 <div class="boddy">
     <div class="login-page">

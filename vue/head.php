@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vue/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css"/>
-    <link rel="stylesheet" href="css/toggle-button.css"/>
-    <link rel="stylesheet" href="css/styyle.css"/>
+    <link rel="stylesheet" href="vue/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" href="vue/css/toggle-button.css"/>
+    <link rel="stylesheet" href="vue/css/styyle.css"/>
     <title>FlexFit</title>
 </head>

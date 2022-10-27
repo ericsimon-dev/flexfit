@@ -1,5 +1,4 @@
-<?php include "./vue/head.php" ?>
-<?php include "./vue/navbar.php" ?>
+
 
 <main class="mt-5 pt-3">
     <div class="container-fluid">
@@ -108,6 +107,6 @@
                     </div>
                 </div>
             </div>
-            <?php include_once "vue/form-structure.php" ?>
+            <?php include_once "../vue/form-structure.php" ?>
         </div>
     </div>

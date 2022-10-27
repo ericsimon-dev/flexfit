@@ -15,7 +15,7 @@ foreach ($lesstructures as $uneStructure) : ?>
         <div class="card bg-primary text-white h-100 background-card">
             <div class="card-body py-5 font-body text-center"><?php echo $uneStructure['nom']?></div>
             <div class="card-footer d-flex background-card-bottom">
-                <a class="text-white text-decoration-none" href="exemple-partenaire.php">Voir la structure</a>
+                <a class="text-white text-decoration-none" href="vue/exemple-partenaire.php">Voir la structure</a>
                 <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                 </span>
