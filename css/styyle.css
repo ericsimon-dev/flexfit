@@ -42,7 +42,7 @@ body {
 }
 
 .custom-color {
-    background-color: #1E1F26;
+    background: #1E1F26;
     color: #D0E1F9!important;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .color-navbar-toggler {
-    background-color: #D0E1F9;
+    background-color: white;
 }
 
 
@@ -71,6 +71,7 @@ body {
 .color-button-add {
     background-color: #1E1F26;
     color: #D0E1F9;
+    font-size: 1vw;
 }
 
 
@@ -79,7 +80,7 @@ body {
 .para-partenaire {
     background-color: #283655;
     color: #D0E1F9;
-    font-size: 19px;
+    font-size: calc(100% + 1vw + 1vh);
 }
 
 .toggle-test {
