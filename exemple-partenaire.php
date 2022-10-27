@@ -1,5 +1,5 @@
 <?php include "./vue/head.php" ?>
-<?php include "./composant/navbar.php" ?>
+<?php include "./vue/navbar.php" ?>
 
 <main class="mt-5 pt-3">
     <div class="container-fluid">

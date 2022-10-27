@@ -6,7 +6,7 @@ include_once('modele/connexion_bdd.php');
 include_once ("vue/head.php");
 
 // on importe la barre de navigation
-include_once ("composant/navbar.php");
+include_once ("vue/navbar.php");
 
 // on importe le controleur, le body de notre page
 include_once("controleur/partenaire.php");
