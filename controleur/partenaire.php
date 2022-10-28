@@ -1,7 +1,7 @@
 <?php
     
     //récupération de l'ensemble des artistes dans la base
-    include_once('modele/get_partenaire.php');
+    include_once('modele/partenaire.php');
     
     $lespartenaires = get_partenaire();
     
@@ -9,4 +9,4 @@
     include_once("vue/vue_partenaire.php");
 
     // ajout du bouton et de la modal Bootstrap
-    include_once("vue/form-partenaire.php");
+    include_once("vue/vue_form-partenaire.php");

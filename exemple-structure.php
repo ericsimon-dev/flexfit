@@ -1,5 +1,12 @@
-<?php include "./vue/head.php" ?>
-<?php include "./vue/navbar.php" ?>
+<?php
+foreach ($les_services as $un_service): 
+    $nom_service= $un_service['nom'];
+    $id_service	= $un_service['id'];
+
+
+    echo ("<script>console.log('Debug Objects: $nom_service $id_service ' );</script>");
+endforeach;
+?>
 
 <main class="mt-5 pt-3">
     <div class="container-fluid">
@@ -8,9 +15,9 @@
                 Informations Générales
             </div>
             <div class="row">
-                <div class="col text-center mb-2">Nom : Basic-Flex Route de Vannes</div>
-                <div class="col text-center">Email : eric@simon.fr</div>
-                <div class="col text-center mb-2">Adresse complète : 12 route de Vannes 44100 Saint Herblain</div>
+                <div class="col text-center mb-2">Nom : <?=$une_structure['nom'];?></div>
+                <div class="col text-center">Téléphone : <?=$une_structure['telephone'];?></div>
+                <div class="col text-center mb-2">Adresse complète : <?=$une_structure['adresse'];?></div>
             </div>
             <div class="row">
 

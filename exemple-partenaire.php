@@ -1,6 +1,9 @@
+<<<<<<< Updated upstream:exemple-partenaire.php
 <?php include "./vue/head.php" ?>
 <?php include "./vue/navbar.php" ?>
 
+=======
+>>>>>>> Stashed changes:vue/vue_detail_partenaire.php
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
@@ -8,9 +11,8 @@
                 Informations Générales
             </div>
             <div class="row">
-                <div class="col text-center mb-2">Nom : Basic-Flex</div>
-                <div class="col text-center">Email : eric@simon.fr</div>
-                <div class="col text-center mb-2">Téléphone : 0678563892</div>
+                <div class="col text-center mb-2">Nom : <?=$partenaire_nom;?></div>
+                <div class="col text-center">Email : <?=$utilisateur['email'];?></div>
             </div>
             <div class="row">
 
@@ -23,13 +25,14 @@
                 Les Services
             </div>
             <div class="row">
-                <div class="col offset-md-2 mb-4">
+                <div class="col offset-md-2">
                     <label class="custom-control teleport-switch">
                         <input type="checkbox" class="teleport-switch-control-input" checked="">
                         <span class="teleport-switch-control-indicator"></span>
                     </label>
                     <span class="big">Distributeur alimentaire</span>
                 </div>
+                
                 <div class="col offset-md-2">
                     <label class="custom-control teleport-switch">
                         <input type="checkbox" class="teleport-switch-control-input" checked="">
@@ -60,54 +63,47 @@
                 </div>
             </div>
             <div class="w-25 text-center rounded-pill mx-auto mt-5 mb-5 p-3 para-partenaire">
-                Les Structures
+               
+            
+            
+            
+            Les Structures
             </div>
+
+            
+            ?>
             <div class="row">
+
+                <?php 
+                foreach ($les_structures as $une_structure) : 
+                    $structure_id= $une_structure['id'];
+                    $structure_nom= $une_structure['nom'];
+                    $structure_adresse= $une_structure['adresse'];
+                    $structure_is_active= $une_structure['is_active'];
+                    $structure_telephone= $une_structure['telephone'];
+                ?>
+
                 <div class="col-md-2 mb-3">
                     <div class="card bg-primary text-white h-100 background-card">
-                        <div class="card-body py-3 text-center big">Basic-Flex Route de Vannes</div>
+                        <div class="card-body py-3 text-center big"><?=$structure_nom;?></div>
                         <div class="card-footer d-flex background-card-bottom">
-                            <a class="text-white text-decoration-none small" href="exemple-structure.php">Voir la structure</a>
+                            <a class="text-white text-decoration-none small" href="index.php?section=vue_detail_structure&id=<?=$structure_id;?>">Voir la structure</a>
                             <span class="ms-auto">
                                 <i class="bi bi-chevron-right"></i>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 mb-3">
-                    <div class="card bg-primary text-white h-100 background-card">
-                        <div class="card-body py-3 text-center big">Basic-Flex Saint Jean</div>
-                        <div class="card-footer d-flex background-card-bottom">
-                            <a class="text-white text-decoration-none small" href="exemple-structure.php">Voir la structure</a>
-                            <span class="ms-auto">
-                                <i class="bi bi-chevron-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 mb-3">
-                    <div class="card bg-primary text-white h-100 background-card">
-                        <div class="card-body py-3 text-center big">Basic-Flex Atlantis</div>
-                        <div class="card-footer d-flex background-card-bottom">
-                            <a class="text-white text-decoration-none small" href="exemple-structure.php">Voir la structure</a>
-                            <span class="ms-auto">
-                                <i class="bi bi-chevron-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 mb-3">
-                    <div class="card bg-primary text-white h-100 background-card">
-                        <div class="card-body py-3 text-center big">Basic-Flex Rue du Calvaire</div>
-                        <div class="card-footer d-flex background-card-bottom">
-                            <a class="text-white text-decoration-none small" href="exemple-structure.php">Voir la structure</a>
-                            <span class="ms-auto">
-                                <i class="bi bi-chevron-right"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+
+                <?php endforeach; ?>
+                
+                
             </div>
+<<<<<<< Updated upstream:exemple-partenaire.php
             <?php include_once "vue/form-structure.php" ?>
+=======
+            <?php include_once "vue_form-structure.php" ?>
+
+>>>>>>> Stashed changes:vue/vue_detail_partenaire.php
         </div>
     </div>

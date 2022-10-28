@@ -19,7 +19,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
     if ($resultat->rowCount() == 1) {
         // l'utilisateur existe dans la table
         // on ajoute ses infos en tant que variables de session
-        echo "on est connecté enculé";
+        
         $_SESSION['mail'] = $login;
         $_SESSION['password'] = $mdp;
         // cette variable indique que l'authentification a réussi

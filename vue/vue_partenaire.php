@@ -10,12 +10,20 @@ include "head.php";
         </div>
         <div class="row">
 <?php
-foreach ($lespartenaires as $unPartenaire) : ?>
+foreach ($lespartenaires as $unPartenaire) : 
+    $nom	= $unPartenaire['nom'];
+    $id	= $unPartenaire['id'];
+
+?>
     <div class="col-md-3 mb-3">
         <div class="card bg-primary text-white h-100 background-card">
-            <div class="card-body py-5 font-body text-center"><?php echo $unPartenaire['nom']?></div>
+            <div class="card-body py-5 font-body text-center"><?php echo $nom?></div>
             <div class="card-footer d-flex background-card-bottom">
+<<<<<<< Updated upstream
                 <a class="text-white text-decoration-none" href="exemple-partenaire.php">Voir le partenaire</a>
+=======
+                <a class="text-white text-decoration-none" href="index.php?section=vue_detail_partenaire&id=<?php echo $id?>">Voir le partenaire</a>
+>>>>>>> Stashed changes
                 <span class="ms-auto">
                     <i class="bi bi-chevron-right"></i>
                 </span>
