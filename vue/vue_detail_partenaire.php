@@ -96,6 +96,6 @@
                 
                 
             </div>
-            <?php include_once "vue/form-structure.php" ?>
+            <?php include_once "vue/vue_form-structure.php" ?>
         </div>
     </div>

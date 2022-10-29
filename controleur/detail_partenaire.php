@@ -13,7 +13,7 @@
 
     $partenaire_nom = get_un_partenaire($id)['nom'];
     
-    $les_structures = get_structures($id);    
+    $les_structures = get_les_structures($id);    
     $les_services = get_services($id);       
     
 
@@ -24,7 +24,7 @@ foreach ($les_services as $un_service) :
     $id_service	= $un_service['id'];
 
 
-    echo ("<script>console.log('Debug Objects: var_dump($un_service) ' );</script>");
+    echo ("<script>console.log('Debug Objects: $nom_service  $id_service' );</script>");
 endforeach;
 //          -----------------------------------------
 

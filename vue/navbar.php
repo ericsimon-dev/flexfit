@@ -31,19 +31,19 @@
                     <li>
                     </li>
                     <li>
-                        <a href="index.php" class="nav-link px-3 mb-4 mt-3 ms-5 font-navbar custom-color">
+                        <a href="index.php?section=partenaire" class="nav-link px-3 mb-4 mt-3 ms-5 font-navbar custom-color">
                             <span class="me-2"><i class="bi bi-table"></i></span>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="partenaire.php" class="nav-link px-3 mb-4 ms-5 font-navbar custom-color">
+                        <a href="index.php?section=partenaire" class="nav-link px-3 mb-4 ms-5 font-navbar custom-color">
                             <span class="me-2"><i class="bi bi-person"></i></span>
                             <span>Partenaires</span>
                         </a>
                     </li>
                     <li>
-                        <a href="structure.php" class="nav-link px-3 mb-2 ms-5 font-navbar custom-color">
+                        <a href="index.php?section=structure" class="nav-link px-3 mb-2 ms-5 font-navbar custom-color">
                             <span class="me-2"><i class="bi bi-file-earmark-person"></i></span>
                             <span>Structures</span>
                         </a>

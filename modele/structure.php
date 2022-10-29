@@ -20,3 +20,14 @@ function get_services_par_structure($id)
         
     return $structure;
 }
+function get_les_structures($id)
+{
+    global $bdd;
+           
+    $req = $bdd->prepare("SELECT * FROM structure LEFT JOIN PARTENAIRE ON structure.id_partenaire = PARTENAIRE.id where PARTENAIRE.id='$id'");
+    $req->execute();
+    $les_structures = $req->fetchAll();
+        
+    return $les_structures;
+}
+
