@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream:exemple-partenaire.php
 <?php include "./vue/head.php" ?>
 <?php include "./vue/navbar.php" ?>
 
-=======
->>>>>>> Stashed changes:vue/vue_detail_partenaire.php
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
@@ -99,11 +96,6 @@
                 
                 
             </div>
-<<<<<<< Updated upstream:exemple-partenaire.php
             <?php include_once "vue/form-structure.php" ?>
-=======
-            <?php include_once "vue_form-structure.php" ?>
-
->>>>>>> Stashed changes:vue/vue_detail_partenaire.php
         </div>
     </div>
