@@ -6,7 +6,7 @@ include_once('modele/connexion_bdd.php');
 include_once ("vue/head.php");
 
 // on importe la barre de navigation
-//include_once ("vue/navbar.php");
+include_once ("vue/navbar.php");
 
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index')
