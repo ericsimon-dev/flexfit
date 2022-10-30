@@ -1,19 +1,25 @@
+
+
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
             <div class="w-25 text-center rounded-pill mx-auto mt-4 mb-5 p-3 para-partenaire">
                 Informations Générales
             </div>
-            <div class="row">
+            <div class="row" >
                 <div class="col text-center mb-2">Nom : <?=$partenaire_nom;?></div>
                 <div class="col text-center">Email : <?=$utilisateur['email'];?></div>
             </div>
+
+           <div id="storage"></div>
             <div class="row">
 
-                <div class="col text-center actif-text mt-5">Actif :<label class="custom-control teleport-switch">
-                        <input type="checkbox" class="teleport-switch-control-input" checked="">
+                <div class="col text-center actif-text mt-5">Actif :<label class="custom-control teleport-switch" >
+                        <input type="checkbox" class="teleport-switch-control-input" onchange="submitForm(document.getElementById('storage'))" >
                         <span class="teleport-switch-control-indicator"></span>
-                    </label></div>
+                </label></div>
+
+
             </div>
             <div class="w-25 text-center rounded-pill mx-auto mt-5 mb-5 p-3 para-partenaire">
                 Les Services
@@ -96,3 +102,4 @@
             <?php include_once "vue/vue_form-structure.php" ?>
         </div>
     </div>
+

@@ -11,5 +11,6 @@
     <link rel="stylesheet" href="vue/css/dataTables.bootstrap5.min.css"/>
     <link rel="stylesheet" href="vue/css/toggle-button.css"/>
     <link rel="stylesheet" href="vue/css/styyle.css"/>
+    
     <title>FlexFit</title>
 </head>
