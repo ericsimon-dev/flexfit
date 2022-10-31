@@ -6,8 +6,6 @@ function get_une_structure($id)
 
     global $bdd;
     $query = "SELECT * FROM structure where id='$id'";
-    //$followingdata = $result->fetch_assoc()
-    //$result = mysqli_query($bdd,$query) or die(mysql_error());
     $result = $bdd->query($query);
     $result = $result->fetch_array(MYSQLI_ASSOC);
     return $result;

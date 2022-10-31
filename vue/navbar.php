@@ -65,7 +65,6 @@
                     </li>
                     <li>
                     <?php 
-                        var_dump($_SESSION);
                         if(isset($_SESSION['mail'])){
                         
                             echo("<a href='index.php?section=deconnexion' class='nav-link px-3 mb-2 ms-5 font-navbar custom-color'>

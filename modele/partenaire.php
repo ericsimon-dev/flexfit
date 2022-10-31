@@ -1,9 +1,13 @@
 <?php
 function get_partenaire()
 {
+    
     global $bdd;
-    $query = "SELECT * FROM partenaire";
+    
+    $query = "  SELECT * FROM partenaire";
     $result = mysqli_query($bdd,$query) or die(mysql_error());
+
+    
     return $result;
 }
 function get_un_partenaire($id)
@@ -13,8 +17,8 @@ function get_un_partenaire($id)
     //$followingdata = $result->fetch_assoc()
     //$result = mysqli_query($bdd,$query) or die(mysql_error());
     $result = $bdd->query($query);
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    return $row;
+    $result = $result->fetch_array(MYSQLI_ASSOC);
+    return $result;
     
     
 
