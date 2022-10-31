@@ -1,5 +1,11 @@
+<head>
 
 
+</head>
+
+
+
+<div id="status"></div>
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
@@ -13,9 +19,8 @@
 
            <div id="storage"></div>
             <div class="row">
-
                 <div class="col text-center actif-text mt-5">Actif :<label class="custom-control teleport-switch" >
-                        <input type="checkbox" class="teleport-switch-control-input" onchange="submitForm(document.getElementById('storage'))" >
+                        <input type="checkbox" class="teleport-switch-control-input" <?php if ($partenaire_is_active){echo "checked";}else{ echo "unchecked";}?>  onchange="javascript:ajax_post(<?php echo($_GET['id'])?>);" >
                         <span class="teleport-switch-control-indicator"></span>
                 </label></div>
 
@@ -27,7 +32,7 @@
             <div class="row">
                 <div class="col offset-md-2">
                     <label class="custom-control teleport-switch">
-                        <input type="checkbox" class="teleport-switch-control-input" checked="">
+                        <input type="checkbox" class="teleport-switch-control-input" checked="1">
                         <span class="teleport-switch-control-indicator"></span>
                     </label>
                     <span class="big">Distributeur alimentaire</span>
@@ -35,7 +40,7 @@
                 
                 <div class="col offset-md-2">
                     <label class="custom-control teleport-switch">
-                        <input type="checkbox" class="teleport-switch-control-input" checked="">
+                        <input type="checkbox" class="teleport-switch-control-input" checked="0">
                         <span class="teleport-switch-control-indicator"></span>
                     </label>
                     <span class="big">Boissons en vente marque FlexFit</span>

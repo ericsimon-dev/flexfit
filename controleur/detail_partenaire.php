@@ -10,8 +10,9 @@
     
     $utilisateur = get_un_utilisateur($id);
     
-
-    $partenaire_nom = get_un_partenaire($id)['nom'];
+    $un_partenaire = get_un_partenaire($id);
+    $partenaire_nom = $un_partenaire['nom'];
+    $partenaire_is_active = $un_partenaire['is_active'];
     
     $les_structures = get_les_structures($id);    
     $les_services = get_services($id);       

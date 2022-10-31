@@ -30,11 +30,11 @@ function get_services($id)
     return $services;
 }
 
-function modifier_etat_partenaire($id,$etat)
+function modifier_etat_partenaire($id)
 {
     global $bdd;
-   
-    $bdd->exec("UPDATE partenaire SET is_active='$etat' WHERE id='$id'");
+    $bdd->exec(" UPDATE partenaire SET is_active = NOT is_active where id ='$id'");
     
 }
+
 

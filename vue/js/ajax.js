@@ -1,50 +1,22 @@
-function createInstance()
-{
-    var req = null;
-    if (window.XMLHttpRequest)
-    {
-         req = new XMLHttpRequest();
-    } 
-    else if (window.ActiveXObject) 
-    {
-        try {
-            req = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e)
-        {
-            try {
-                req = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (e) 
-            {
-                alert("XHR not created");
-            }
-        }
-        }
-    return req;
-};
 
-function storing(data, element)
-{
-    element.innerHTML = data;
+function ajax_post(id){
+// Create our XMLHttpRequest object
+var hr = new XMLHttpRequest();
+// Create some variables we need to send to our PHP file
+var url = "controleur/action_ajax.php";
+
+hr.open("POST", url, true);
+// Set content type header information for sending url encoded variables in the request
+hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+// Access the onreadystatechange event for the XMLHttpRequest object
+hr.onreadystatechange = function() {
+    if(hr.readyState == 4 && hr.status == 200) {
+        var return_data = hr.responseText;
+        document.getElementById("status").innerHTML = return_data;
+    }
 }
-
-function submitForm(element)
-{ 
-    var req =  createInstance();
-
-    req.onreadystatechange = function()
-    { 
-        if(req.readyState == 4)
-        {
-            if(req.status == 200)
-            {
-                storing(req.responseText, element);	
-            }	
-            else	
-            {
-                alert("Error: returned status code " + req.status + " " + req.statusText);
-            }	
-        } 
-    }; 
-    req.open("GET", "controleur/action_ajax.php", true); 
-    req.send(null); 
-} 
+// Send the data to PHP now... and wait for response to update the status div
+hr.send("id=" + id); // Actually execute the request
+// Etat de chargement
+//document.getElementById("status").innerHTML = "processing...";
+}
