@@ -1,54 +1,65 @@
-<button type="button" class="btn color-button-add w-25 btn-block btn-lg mb-5 ms-5 mt-3" data-bs-toggle="modal" data-bs-target="#myModal">Ajouter une Structure</button>
+<button type="button" class="btn color-button-add sizing-btn btn-block btn-lg mb-5 ms-5 mt-5" data-toggle="modal" data-target="#myModal">Ajouter une Structure</button>
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
+      <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Ajouter une structure</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-dismiss="modal"></button>
       </div>
+
+      <!-- Modal Body -->
       <div class="modal-body">
-        <form>
+        <form role="form" action="" method="POST" id="form-part">
           <div class="mb-3">
             <label class="form-label required">Raison sociale :</label>
-            <input type="text" class="form-control" placeholder="BasicFlex Route de Vannes">
+            <input type="text" class="form-control" name="part" id="inputName" placeholder="BasicFit Nantes">
           </div>
           <div class="mb-3">
             <label class="form-label required">Email :</label>
-            <input type="email" class="form-control" placeholder="eric@simon.fr">
+            <input type="email" class="form-control" name="mail" id="inputEmail" placeholder="eric@simon.fr">
           </div>
           <div class="mb-3">
             <label class="form-label required">Adresse complète :</label>
-            <input class="form-control" placeholder="12 rue du calvaire 44300 Nantes"></input>
+            <input class="form-control" placeholder="13 rue du biceps 44000 Nantes" id="inputAdress" name="adress"></input>
           </div>
-          <div class="mb-3">
-            <label class="mb-1">Services par défaut du Partenaire :</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Vente boissons de la marque FlexFlit
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-              <label class="form-check-label" for="flexCheckChecked">
-                Distributeur alimentaire
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-              <label class="form-check-label" for="flexCheckChecked">
-                Lavage de serviettes
-              </label>
-            </div>
-          </div>
-
         </form>
       </div>
+
+      <!-- Modal Footer -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-        <button type="submit" class="btn btn-danger">Retour</button>
+        <button type="button" class="btn btn-primary" onclick="submitContactForm()">Envoyer</button>
+        <button type="button" class="btn btn-danger submitBtn" data-dismiss="modal">Retour</button>
       </div>
     </div>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script>function submitContactForm() {
+    reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    part = $('#inputName').val();
+    if (part.trim() == '') {
+        alert('Entrez votre raison sociale.');
+        $('#inputName').focus();
+        return false;
+    } else {
+        $.ajax({
+            url: "modele/insert_partenaire.php",
+            type: "POST",
+            data: { part: part },
+            cache: false,
+            success: function(dataResult) {
+                dataResult = JSON.parse(dataResult);
+                if (dataResult.statusCode == 200) {
+                    $("#butsave").removeAttr("disabled");
+                    $('#fupForm').find('input:text').val('');
+                    $("#success").show();
+                    $('#success').html('Data added successfully !');
+                } else if (dataResult.statusCode == 201) {
+                    alert("Error occured !");
+                }
+
+            }
+        })
+    }
+}
+</script>

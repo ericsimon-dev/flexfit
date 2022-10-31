@@ -1,4 +1,4 @@
-<button type="button" class="btn color-button-add w-25 btn-block btn-lg mb-5 ms-5 mt-3" data-toggle="modal" data-target="#myModal">Ajouter un Partenaire</button>
+<button type="button" class="btn color-button-add sizing-btn btn-block btn-lg mb-5 ms-5 mt-5" data-toggle="modal" data-target="#myModal">Ajouter un Partenaire</button>
 <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">

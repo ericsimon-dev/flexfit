@@ -1,9 +1,12 @@
 <body>
     <!-- Barre de navigation haute avec barre de recherche -->
-    <nav class="navbar navbar-expand-lg fixed-top custom-color">
+    <nav class="navbar navbar-expand-lg fixed-top really-fixed-top custom-color" id="top-bar">
         <div class="container-fluid">
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+            </button> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon navbar-light" data-bs-target="#sidebar"></span>
+                <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
             </button>
             <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">FlexFit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,12 +27,10 @@
     </nav>
     <!-- Barre de navigation haute avec barre de recherche -->
     <!-- Barre de navigation gauche -->
-    <div class="offcanvas offcanvas-start sidebar-nav custom-color" tabindex="-1" id="sidebar">
+    <div class="offcanvas offcanvas-start sidebar-nav custom-color" id="sidebar">
         <div class="offcanvas-body p-0">
             <nav class="navbar-dark">
                 <ul class="navbar-nav">
-                    <li>
-                    </li>
                     <li>
                         <a href="index.php?section=partenaire" class="nav-link px-3 mb-4 mt-3 ms-5 font-navbar custom-color">
                             <span class="me-2"><i class="bi bi-table"></i></span>
@@ -43,14 +44,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?section=structure" class="nav-link px-3 mb-2 ms-5 font-navbar custom-color">
+                        <a href="index.php?section=structure" class="nav-link px-3 mb-4 ms-5 font-navbar custom-color">
                             <span class="me-2"><i class="bi bi-file-earmark-person"></i></span>
                             <span>Structures</span>
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?section=connexion" class="nav-link px-3 mb-2 font-navbar custom-color">
-                            <span class="me-2"><i class="bi bi-file-earmark-person"></i></span>
+                        <a href="index.php?section=connexion" class="nav-link px-3 mb-2 ms-5 font-navbar custom-color">
+                            <span class="me-2"><i class="bi bi-shield-lock"></i></span>
                             <span>Connexion</span>
                         </a>
                     </li>

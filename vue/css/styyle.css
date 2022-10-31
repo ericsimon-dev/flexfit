@@ -16,6 +16,10 @@ body {
 
 /* Navbar */
 
+.really-fixed-top {
+    position: fixed !important;
+}
+
 .sidebar-nav {
     width: var(--offcanvas-width);
 }
@@ -66,12 +70,16 @@ body {
 }
 
 
-/* Bouton ajouter un partenaire */
+/* Bouton ajouter un partenaire/structure */
 
 .color-button-add {
     background-color: #1E1F26;
     color: #D0E1F9;
     font-size: 1vw;
+}
+
+.sizing-btn {
+    width: 50%;
 }
 
 
@@ -80,7 +88,7 @@ body {
 .para-partenaire {
     background-color: #283655;
     color: #D0E1F9;
-    font-size: calc(100% + 1vw + 1vh);
+    font-size: 1;
 }
 
 .toggle-test {
@@ -108,5 +116,19 @@ body {
         visibility: visible !important;
         height: calc(100% - var(--topNavbarHeight));
         top: var(--topNavbarHeight);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .color-button-add {
+        background-color: #1E1F26;
+        color: #D0E1F9;
+        font-size: 3vw;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .sizing-btn {
+        width: 25%;
     }
 }

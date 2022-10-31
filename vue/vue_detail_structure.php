@@ -11,7 +11,7 @@ endforeach;
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
-            <div class="w-25 text-center rounded-pill mx-auto mt-4 mb-5 p-3 para-partenaire">
+            <div class="sizing-btn text-center rounded-pill mx-auto mt-5 mb-5 p-3 para-partenaire">
                 Informations Générales
             </div>
             <div class="row">
@@ -26,7 +26,7 @@ endforeach;
                         <span class="teleport-switch-control-indicator"></span>
                     </label></div>
             </div>
-            <div class="w-25 text-center rounded-pill mx-auto mt-5 mb-5 p-3 para-partenaire">
+            <div class="sizing-btn text-center rounded-pill mx-auto mt-5 mb-5 p-3 para-partenaire">
                 Les Services par défaut
             </div>
             <div class="row">
