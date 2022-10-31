@@ -9,6 +9,7 @@
 
     
     $utilisateur = get_un_utilisateur($id);
+    $utilisateur_mail = $utilisateur['email'];
     
     $un_partenaire = get_un_partenaire($id);
     $partenaire_nom = $un_partenaire['nom'];

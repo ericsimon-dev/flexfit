@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 // connexion à la bdd
 include_once('modele/connexion_bdd.php');
 
@@ -6,7 +9,7 @@ include_once('modele/connexion_bdd.php');
 include_once ("vue/head.php");
 
 // on importe la barre de navigation
-include_once ("vue/navbar.php");
+//include_once ("vue/navbar.php");
 
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index')
@@ -44,6 +47,12 @@ else
     {  
         
             include_once('controleur/connexion.php');
+    }
+    if ($_GET['section'] == 'deconnexion')
+    {  
+        
+            include_once('controleur/deconnexion.php');
+            include_once('controleur/partenaire.php');
     }
 }
 

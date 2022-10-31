@@ -2,38 +2,38 @@
 function get_partenaire()
 {
     global $bdd;
-           
-    $req = $bdd->prepare("SELECT * FROM partenaire");
-    $req->execute();
-    $partenaires = $req->fetchAll();
-        
-    return $partenaires;
+    $query = "SELECT * FROM partenaire";
+    $result = mysqli_query($bdd,$query) or die(mysql_error());
+    return $result;
 }
 function get_un_partenaire($id)
-{
+{    
     global $bdd;
-           
-    $req = $bdd->prepare("SELECT * FROM partenaire where id='$id'");
-    $req->execute();
-    $partenaire = $req->fetch();
-        
-    return $partenaire;
+    $query = "SELECT * FROM partenaire where id='$id'";
+    //$followingdata = $result->fetch_assoc()
+    //$result = mysqli_query($bdd,$query) or die(mysql_error());
+    $result = $bdd->query($query);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    return $row;
+    
+    
+
+
+
 }
 function get_services($id)
 {
     global $bdd;
-           
-    $req = $bdd->prepare("SELECT * FROM service s LEFT JOIN service_partenaire on id=id_service where id_partenaire='$id'");
-    $req->execute();
-    $services = $req->fetchAll();
-        
-    return $services;
+    $query = "SELECT * FROM service s LEFT JOIN service_partenaire on id=id_service where id_partenaire='$id'";
+    $result = mysqli_query($bdd,$query) or die(mysql_error());
+    return $result;
+    
 }
 
 function modifier_etat_partenaire($id)
 {
     global $bdd;
-    $bdd->exec(" UPDATE partenaire SET is_active = NOT is_active where id ='$id'");
+    $bdd->query(" UPDATE partenaire SET is_active = NOT is_active where id ='$id'");
     
 }
 

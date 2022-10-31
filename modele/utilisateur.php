@@ -3,9 +3,9 @@ function get_un_utilisateur($id)
 {
     global $bdd;
            
-    $req = $bdd->prepare("SELECT * FROM utilisateur where id_partenaire='$id'");
-    $req->execute();
-    $partenaire = $req->fetch();
-        
-    return $partenaire;
+    
+    $query = "SELECT * FROM utilisateur where id_partenaire='$id'";
+    $result = $bdd->query($query);
+    $result = $result->fetch_array(MYSQLI_ASSOC);
+    return $result;
 }

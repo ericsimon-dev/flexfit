@@ -14,6 +14,20 @@
             </button>
             </button>
             <div class="collapse navbar-collapse" id="topNavBar">
+            
+            <?php 
+            if(isset($_SESSION['mail'])){
+                $mail=$_SESSION['mail'];
+                
+                echo("<div class='d-flex ms-auto my-3 my-lg-0 text-right'>
+                    <div class='input-group'>
+                            <span>Bienvenue $mail</span>
+                        </div>
+                </div>"
+            );
+                
+            }
+            ?>
                 <form class="d-flex ms-auto my-3 my-lg-0 text-right">
                     <div class="input-group">
                         <input class="form-control-lg" type="search" placeholder="Rechercher" aria-label="Search" />
@@ -50,10 +64,23 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?section=connexion" class="nav-link px-3 mb-2 ms-5 font-navbar custom-color">
-                            <span class="me-2"><i class="bi bi-shield-lock"></i></span>
-                            <span>Connexion</span>
-                        </a>
+                    <?php 
+                        var_dump($_SESSION);
+                        if(isset($_SESSION['mail'])){
+                        
+                            echo("<a href='index.php?section=deconnexion' class='nav-link px-3 mb-2 ms-5 font-navbar custom-color'>
+                                    <span class='me-2'><i class='bi bi-shield-lock'></i></span>
+                                    <span>Déconnexion</span>
+                                </a>");
+                        }
+                        else{
+                            echo("<a href='index.php?section=connexion' class='nav-link px-3 mb-2 ms-5 font-navbar custom-color'>
+                                    <span class='me-2'><i class='bi bi-shield-lock'></i></span>
+                                    <span>Connexion</span>
+                                </a>");
+
+                        }
+                    ?>
                     </li>
                 </ul>
             </nav>

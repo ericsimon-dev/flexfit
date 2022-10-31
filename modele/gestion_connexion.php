@@ -1,50 +1,27 @@
 <?php
 session_start();  // démarrage d'une session
+include_once('connexion_bdd.php');
 
-// on vérifie que les données du formulaire sont présentes
-if (isset($_POST['mail']) && isset($_POST['password'])) {
+if (isset($_POST['mail'])){
+    
+  $username = stripslashes($_REQUEST['mail']);
+  $username = mysqli_real_escape_string($bdd, $username);
+  $password = stripslashes($_REQUEST['password']);
+  $password = mysqli_real_escape_string($bdd, $password);
+  $query = "SELECT * FROM `utilisateur` WHERE email='$username' and motdepasse='".hash('sha256', $password)."'";
+  $result = mysqli_query($bdd,$query) or die(mysql_error());
+  $rows = mysqli_num_rows($result);
+  if($rows==1){
+    
 
-    // // cette requête permet de récupérer l'utilisateur depuis la BD
-    // $bdd->$requete = "SELECT * FROM `utilisateur` WHERE email=? AND motdepasse=?";
-    // $bdd->execute($requete);
-    // $login = $_POST['mail'];
-    // $mdp = $_POST['password'];
-
-    $sql="SELECT * FROM `utilisateur` WHERE email=? AND motdepasse=?";
-	if(!$connexion->query($sql))
-		echo "Pb de requete";
-	else{
-    echo "c ok";
-}
-    if ($resultat->rowCount() == 1) {
-        // l'utilisateur existe dans la table
-        // on ajoute ses infos en tant que variables de session
-        
-        $_SESSION['mail'] = $login;
-        $_SESSION['password'] = $mdp;
-        // cette variable indique que l'authentification a réussi
-        $authOK = true;
-    }
+      $_SESSION['mail'] = $username;
+      header("Location: ../index.php");
+      
+  }else{
+    
+    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+    header("Location: ../index.php?section=connexion&connect=false");
+    echo($query);
+  }
 }
 ?>
-
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Résultat de l'authentification</title>
-</head>
-<body>
-    <h1>Résultat de l'authentification</h1>
-    <?php
-    echo $requete;
-    if (isset($authOK)) {
-        echo "<p>Vous avez été reconnu(e) en tant que " . ($login) . "</p>";
-        echo '<a href="index.php">Poursuivre vers la page d\'accueil</a>';
-    }
-    else { ?>
-        <p>Vous n'avez pas été reconnu(e)</p>
-        <p><a href="login.php">Nouvel essai</p>
-    <?php } ?>
-</body>
-</html>

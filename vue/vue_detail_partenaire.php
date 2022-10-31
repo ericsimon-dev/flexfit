@@ -8,7 +8,7 @@
             </div>
             <div class="row">
                 <div class="col text-center mb-2">Nom : <?= $partenaire_nom; ?></div>
-                <div class="col text-center">Email : <?= $utilisateur['email']; ?></div>
+                <div class="col text-center">Email : <?= $utilisateur_mail; ?></div>
             </div>
             <div class="row">
             <div class="col text-center actif-text mt-5">Actif :
