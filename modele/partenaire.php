@@ -41,4 +41,10 @@ function modifier_etat_partenaire($id)
     
 }
 
+function insert_partenaire($id)
+{
+    global $bdd;
+    $bdd->query(" insert");
+    
+}
 

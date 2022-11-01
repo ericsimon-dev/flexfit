@@ -65,7 +65,7 @@
         return false;
     } else {
         $.ajax({
-            url: "modele/insert_partenaire.php",
+            url: "controleur/insert_partenaire.php",
             type: "POST",
             data: { part: part },
             cache: false,
