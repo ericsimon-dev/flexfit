@@ -2,14 +2,12 @@
 include_once('../modele/partenaire.php');
 include_once('..//modele/connexion_bdd.php');
 //TODO
+echo("<script>console.log('PHP proooooooooout');</script>");
+// $name = $_POST['name'];
+// $mail = $_POST['mail'];
+// $phone = $_POST['phone'];
+$mail = 'ericdsfghrezrfqrstd@orange.fr';
 
-$id = $_POST['id'];
-$id2 = $_POST['id'];
-$id3 = $_POST['id'];
-$id4 = $_POST['id'];
-$id5 = $_POST['id'];
-
-
-insert_partenaire($id,$id2,$id3,$id4,$id5);
+insert_utilisateur($mail);
 
 ?>

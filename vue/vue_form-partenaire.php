@@ -13,7 +13,7 @@
         <form role="form" action="" method="POST" id="form-part">
           <div class="mb-3">
             <label class="form-label required">Raison sociale :</label>
-            <input type="text" class="form-control" name="part" id="inputName" placeholder="BasicFlex">
+            <input type="text" class="form-control" name="name" id="inputName" placeholder="BasicFlex">
           </div>
           <div class="mb-3">
             <label class="form-label required">Email :</label>
@@ -58,30 +58,38 @@
 </div>
 <script>function submitContactForm() {
     reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    part = $('#inputName').val();
-    if (part.trim() == '') {
+    name = $('#inputName').val();
+    mail = $('#inputEmail').val();
+    phone = $('#inputPhone').val();
+    if (name.trim() == '') {
         alert('Entrez votre raison sociale.');
         $('#inputName').focus();
+        return false;
+    } else if (mail.trim() == '' || !reg.test(mail)) {
+        alert('Entrez un email valide.');
+        $('#inputEmail').focus();
+        return false;
+    } else if (phone.trim() == '') {
+        alert('Entrez un numéro de téléphone.');
+        $('#inputPhone').focus();
         return false;
     } else {
         $.ajax({
             url: "controleur/insert_partenaire.php",
             type: "POST",
-            data: { part: part },
+            data: { mail: mail },
             cache: false,
             success: function(dataResult) {
                 dataResult = JSON.parse(dataResult);
                 if (dataResult.statusCode == 200) {
-                    $("#butsave").removeAttr("disabled");
-                    $('#fupForm').find('input:text').val('');
-                    $("#success").show();
-                    $('#success').html('Data added successfully !');
+                  alert("tout fonctionne");
                 } else if (dataResult.statusCode == 201) {
                     alert("Error occured !");
                 }
 
             }
         })
+        alert('tout est ok');
     }
 }
 </script>
