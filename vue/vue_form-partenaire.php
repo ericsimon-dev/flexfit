@@ -50,46 +50,9 @@
 
       <!-- Modal Footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="submitContactForm()">Envoyer</button>
+        <button type="button" class="btn btn-primary" onclick="ajouter_partenaire();">Envoyer</button>
         <button type="button" class="btn btn-danger submitBtn" data-dismiss="modal">Retour</button>
       </div>
     </div>
   </div>
 </div>
-<script>function submitContactForm() {
-    reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    name = $('#inputName').val();
-    mail = $('#inputEmail').val();
-    phone = $('#inputPhone').val();
-    if (name.trim() == '') {
-        alert('Entrez votre raison sociale.');
-        $('#inputName').focus();
-        return false;
-    } else if (mail.trim() == '' || !reg.test(mail)) {
-        alert('Entrez un email valide.');
-        $('#inputEmail').focus();
-        return false;
-    } else if (phone.trim() == '') {
-        alert('Entrez un numéro de téléphone.');
-        $('#inputPhone').focus();
-        return false;
-    } else {
-        $.ajax({
-            url: "controleur/insert_partenaire.php",
-            type: "POST",
-            data: { mail: mail },
-            cache: false,
-            success: function(dataResult) {
-                dataResult = JSON.parse(dataResult);
-                if (dataResult.statusCode == 200) {
-                  alert("tout fonctionne");
-                } else if (dataResult.statusCode == 201) {
-                    alert("Error occured !");
-                }
-
-            }
-        })
-        alert('tout est ok');
-    }
-}
-</script>

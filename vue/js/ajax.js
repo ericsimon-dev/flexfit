@@ -1,23 +1,46 @@
 
-function ajax_post(id,action){
-// Create our XMLHttpRequest object
-var hr = new XMLHttpRequest();
-// Create some variables we need to send to our PHP file
-var url = "controleur/action_ajax.php";
-
-
-hr.open("POST", url, true);
-// Set content type header information for sending url encoded variables in the request
-hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-// Access the onreadystatechange event for the XMLHttpRequest object
-hr.onreadystatechange = function() {
-    if(hr.readyState == 4 && hr.status == 200) {
-        //var return_data = hr.responseText;
-        //document.getElementById("status").innerHTML = return_data;
+function modifier_etat_partenaire(id){
+    var xhr                 = new XMLHttpRequest();
+    var url = "controleur/action_ajax.php";
+    
+    var myObject = { 'id' : id};
+    
+    var str             = "data=" + JSON.stringify(myObject);
+    
+    xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+        document.getElementById('message').className = 'okmessage';
+        setTimeout("document.getElementById('message').className = 'pasok';", 5000);
     }
+    }
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("action=etat_partenaire&"+str);
 }
-// Send the data to PHP now... and wait for response to update the status div
-hr.send("id=" + id + "&action=" + action); // Actually execute the request
-// Etat de chargement
-//document.getElementById("status").innerHTML = "processing...";
+function ajouter_partenaire(){
+    var xhr                 = new XMLHttpRequest();
+    var url = "controleur/action_ajax.php";
+    
+    var nom          = document.getElementById('inputName').value;
+    var mail          = document.getElementById('inputEmail').value;
+    var telephone          = document.getElementById('inputPhone').value;
+    
+    //todo gestion des services
+    
+    
+    var myObject = { 'nom' : nom,'mail' : mail,'telephone' : telephone};
+    
+    var str             = "data=" + JSON.stringify(myObject);
+    
+    xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+        document.getElementById('message').className = 'okmessage';
+        setTimeout("document.getElementById('message').className = 'pasok';", 5000);
+    }
+    }
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send("action=ajout_partenaire&"+str);
 }

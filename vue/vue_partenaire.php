@@ -1,11 +1,14 @@
 <?php
 include "head.php";
 ?>
+
 <main class="mt-5 pt-3">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="mb-4 mt-5">Tout les partenaires : </h4>
+            <h4 class="mb-4 mt-5">Tout les partenaires : </h4> 
+            <h4 id="message" class="pasok">Partenaire ajouter</h4>
+
             </div>
         </div>
     </div>
@@ -31,3 +34,8 @@ include "head.php";
             </div>
         <?php endforeach; ?>
     </div>
+    <script>
+        setTimeout(() => {console.log("this is the first message")}, 5000);
+        setTimeout(() => {console.log("this is the second message")}, 3000);
+        setTimeout(() => {console.log("this is the third message")}, 1000);
+    </script>

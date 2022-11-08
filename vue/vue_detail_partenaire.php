@@ -17,7 +17,7 @@
                                                                                             echo "checked";
                                                                                         } else {
                                                                                             echo "unchecked";
-                                                                                        } ?> onchange="javascript:ajax_post(<?php echo ($_GET['id']) ?>,'etat_partenaire');">
+                                                                                        } ?> onchange="javascript:modifier_etat_partenaire(<?php echo ($_GET['id']) ?>,'etat_partenaire');">
                         <span class="teleport-switch-control-indicator"></span>
                     </label>
                 </div>

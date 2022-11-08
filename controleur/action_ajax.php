@@ -7,15 +7,15 @@ $logFile = "view.log";
 
 
 
-$id = $_POST['id'];
-$action = $_POST['action'];
+$data = (json_decode($_POST['data']));
+$action = ($_POST['action']);
 
 switch ($action) {
     case "etat_partenaire":
-        modifier_etat_partenaire($id);
+        modifier_etat_partenaire($data->{'id'});
         break;
     case "ajout_partenaire":
-        insert_utilisateur("");
+        insert_utilisateur($data->{'nom'},$data->{'mail'},$data->{'telephone'});
         break;
     case "ajout_structure":
         echo "i égal 2";

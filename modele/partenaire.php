@@ -41,10 +41,13 @@ function modifier_etat_partenaire($id)
     
 }
 
-function insert_utilisateur($mail)
+function insert_utilisateur($nom,$mail,$telephone)
 {
+    
     global $bdd;
-    $bdd->query("INSERT INTO utilisateur (mail) VALUES ('eric@simon.fr')");
-    // mysqli_query("INSERT INTO utilisateur(email, role, id_partenaire) VALUES ('cesarcap49@gmail.com',1,idPartenaire)");
-    $last_id = mysqli_insert_id($bdd);
+    $bdd->query("INSERT INTO `flexfit`.`partenaire` (nom, telephone) VALUES ('$nom', '$telephone')");
+    $id_partenaire = mysqli_insert_id($bdd);
+
+    $bdd->query("INSERT INTO `flexfit`.`utilisateur` (`email`, `role`,id_partenaire) VALUES ('$mail', 1,$id_partenaire)");
+    
 }

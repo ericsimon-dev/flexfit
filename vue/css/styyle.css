@@ -99,6 +99,17 @@ body {
     font-size: 18px;
 }
 
+
+/* Message ajax */
+.pasok {
+    display: none;
+}
+.okmessage {
+    color:green;
+    text-align: center;
+}
+
+
 @media (min-width: 992px) {
     body {
         overflow: auto !important;
@@ -132,3 +143,4 @@ body {
         width: 25%;
     }
 }
+
